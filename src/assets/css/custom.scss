@@ -1,0 +1,9 @@
+$primary: #ff4e88;
+@import 'bootstrap/scss/bootstrap';
+
+.btn-primary {
+  --bs-btn-color: white;
+  --bs-btn-hover-color: white;
+  --bs-btn-active-color: white;
+  --bs-btn-disabled-color: white;
+}
