@@ -3,14 +3,29 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="clearfix">
-    <div class="container">
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-      <div class="wrapper">
-        <nav>
-          <RouterLink to="/" class="btn btn-primary me-3">Home</RouterLink>
-          <RouterLink to="/about" class="btn btn-primary me-3">About</RouterLink>
+  <header class="clearfix header">
+    <div class="container h-100">
+      <div class="d-flex align-items-center h-100">
+        <div class="logo-image h-100 d-flex align-items-center">
+          <RouterLink to="/">
+            <img alt="Vue logo" class="" src="@/assets/logo.svg" height="45" width="45" />
+          </RouterLink>
+        </div>
+        <nav class="menu-items-parent m-0 p-0">
+          <ul
+            class="list-unstyled m-0 p-0 d-flex gap-2 align-items-center justify-content-end w-100"
+          >
+            <li>
+              <RouterLink to="/register" class="btn btn-sm btn-primary me-3 rounded-pill px-4"
+                >Register</RouterLink
+              >
+            </li>
+            <li>
+              <RouterLink to="/login" class="btn btn-sm btn-outline-primary me-3 rounded-pill px-4"
+                >Login</RouterLink
+              >
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -19,4 +34,19 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.header {
+  --header-height: 3.5rem;
+  --logo-width: 7.5rem;
+  --navbar-width: calc(100% - var(--logo-width));
+  --header-bg: #f5f5f7;
+  height: var(--header-height);
+  background: var(--header-bg);
+  .logo-image {
+    width: var(--logo-width);
+  }
+  .menu-items-parent {
+    width: var(--navbar-width);
+  }
+}
+</style>
