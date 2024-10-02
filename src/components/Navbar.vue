@@ -6,7 +6,7 @@ const authStore = useAuthStore()
 </script>
 
 <template>
-  <header class="clearfix header">
+  <header class="clearfix header border-bottom border-primary">
     <div class="container h-100">
       <div class="d-flex align-items-center h-100">
         <div class="logo-image h-100 d-flex align-items-center">
@@ -35,7 +35,7 @@ const authStore = useAuthStore()
             class="list-unstyled m-0 p-0 d-flex gap-2 align-items-center justify-content-end w-100"
           >
             <li>
-              <a href="">Message</a>
+              <RouterLink to="/messages" class="text-decoration-none">Message</RouterLink>
             </li>
             <li>
               <button
@@ -59,7 +59,7 @@ const authStore = useAuthStore()
   --header-height: 3.5rem;
   --logo-width: 7.5rem;
   --navbar-width: calc(100% - var(--logo-width));
-  --header-bg: #f5f5f7;
+  --header-bg: #fff;
   height: var(--header-height);
   background: var(--header-bg);
   .logo-image {
