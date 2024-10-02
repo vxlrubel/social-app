@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+
+const authStore = useAuthStore()
 </script>
 
 <template>
@@ -14,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <nav class="menu-items-parent m-0 p-0">
           <ul
             class="list-unstyled m-0 p-0 d-flex gap-2 align-items-center justify-content-end w-100"
+            v-if="!authStore.isLoggedIn()"
           >
             <li>
               <RouterLink to="/register" class="btn btn-sm btn-primary me-3 rounded-pill px-4"
@@ -24,6 +28,22 @@ import { RouterLink, RouterView } from 'vue-router'
               <RouterLink to="/login" class="btn btn-sm btn-outline-primary me-3 rounded-pill px-4"
                 >Login</RouterLink
               >
+            </li>
+          </ul>
+          <ul
+            v-else
+            class="list-unstyled m-0 p-0 d-flex gap-2 align-items-center justify-content-end w-100"
+          >
+            <li>
+              <a href="">Message</a>
+            </li>
+            <li>
+              <button
+                @click="authStore.logout()"
+                class="btn btn-sm btn-outline-primary rounded-pill px-4"
+              >
+                Logout
+              </button>
             </li>
           </ul>
         </nav>
