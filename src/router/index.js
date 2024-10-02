@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Messages from '../views/Messages.vue'
 import { useAuthStore } from '@/stores/auth'
 import Dashboard from '@/components/Dashboard.vue'
 import Login from '@/components/auth/Login.vue'
@@ -25,6 +26,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/messages',
+    name: 'messages',
+    component: Messages
   }
 ]
 
