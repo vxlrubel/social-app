@@ -11,3 +11,37 @@ $primary: #ff4e88;
   --bs-btn-hover-color: white;
   --bs-btn-active-color: white;
 }
+
+*::selection {
+  background-color: $primary !important;
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 10px;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary #fff;
+}
+body {
+  -ms-overflow-style: none;
+}
+
+body::-ms-scrollbar {
+  width: 6px;
+}
+
+body::-ms-scrollbar-thumb {
+  background-color: $primary;
+}
